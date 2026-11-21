@@ -1,0 +1,339 @@
+{
+  "version": 1,
+  "profile": {
+    "name": "Demo Operator",
+    "role": "Sample identity — replace in Control Center",
+    "roleZh": "示例身份 — 请在控制中心替换",
+    "bio": "This biography is placeholder copy for the NEXUS demo. It is not a real person. Swap in your own name, focus, and links from Control Center. Every website bundled with this universe is fictional and points at example.com.",
+    "bioZh": "这段简介是 NEXUS 演示用的占位文案，并不指向真人。你可以在控制中心换成自己的名字、关注领域和链接。这个宇宙里捆绑的每个网站都是虚构的，统一指向 example.com。",
+    "focus": ["Interface systems", "Spatial archives", "Personal tools"],
+    "focusZh": ["界面系统", "空间档案", "个人工具"],
+    "email": "operator@example.com",
+    "location": "Example City",
+    "locationZh": "示例城市",
+    "socials": [
+      {
+        "id": "soc-home",
+        "label": "Example home",
+        "labelZh": "示例主页",
+        "url": "https://example.com/nexus-demo"
+      },
+      {
+        "id": "soc-notes",
+        "label": "Example notes",
+        "labelZh": "示例笔记",
+        "url": "https://example.com/nexus-demo/notes"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "developer",
+      "name": "Developer",
+      "nameZh": "开发",
+      "description": "Example docs and experiments.",
+      "descriptionZh": "示例文档与实验。",
+      "color": "#00d9ff",
+      "position": [-16, 1.2, -2]
+    },
+    {
+      "id": "projects",
+      "name": "Projects",
+      "nameZh": "项目",
+      "description": "Example product work.",
+      "descriptionZh": "示例产品作品。",
+      "color": "#8b5cf6",
+      "position": [14, 0.4, -10]
+    },
+    {
+      "id": "knowledge",
+      "name": "Knowledge",
+      "nameZh": "知识",
+      "description": "Example writing and research.",
+      "descriptionZh": "示例文章与研究。",
+      "color": "#00ffa3",
+      "position": [1, 2.2, 16]
+    },
+    {
+      "id": "social",
+      "name": "Social",
+      "nameZh": "社交",
+      "description": "Example profiles and contact.",
+      "descriptionZh": "示例主页与联系方式。",
+      "color": "#00d9ff",
+      "position": [-14, -1, 12]
+    },
+    {
+      "id": "tools",
+      "name": "Tools",
+      "nameZh": "工具",
+      "description": "Example utilities.",
+      "descriptionZh": "示例实用小工具。",
+      "color": "#8b5cf6",
+      "position": [17, 1.4, 7]
+    },
+    {
+      "id": "other",
+      "name": "Other",
+      "nameZh": "其他",
+      "description": "Example leftovers and archives.",
+      "descriptionZh": "示例遗留内容与归档。",
+      "color": "#93a0b8",
+      "position": [-1, -2.2, -16]
+    }
+  ],
+  "websites": [
+    {
+      "id": "ex-atlas",
+      "name": "Example · Atlas Docs",
+      "nameZh": "示例 · 图谱文档",
+      "url": "https://example.com/nexus-demo/atlas-docs",
+      "description": "Example only. A fictional documentation portal for interface notes. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的界面笔记文档站，并非真实网站。",
+      "categoryId": "developer",
+      "tags": ["docs", "reference"],
+      "tagsZh": ["文档", "参考"],
+      "icon": "Library",
+      "cover": "",
+      "featured": true,
+      "visible": true,
+      "createdAt": "2026-01-08T00:00:00.000Z",
+      "position": [3.3, 0.25, 1.1]
+    },
+    {
+      "id": "ex-signal",
+      "name": "Example · Signal Lab",
+      "nameZh": "示例 · 信号实验室",
+      "url": "https://example.com/nexus-demo/signal-lab",
+      "description": "Example only. A fictional bench for interface experiments. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的界面实验台，并非真实网站。",
+      "categoryId": "developer",
+      "tags": ["code", "experiments"],
+      "tagsZh": ["代码", "实验"],
+      "icon": "FlaskConical",
+      "cover": "",
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-01-14T00:00:00.000Z",
+      "position": [-2.7, -0.2, 2.8]
+    },
+    {
+      "id": "ex-lumen",
+      "name": "Example · Lumen Kit",
+      "nameZh": "示例 · 流光组件库",
+      "url": "https://example.com/nexus-demo/lumen-kit",
+      "description": "Example only. A fictional design-system site. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的设计系统站点，并非真实网站。",
+      "categoryId": "projects",
+      "tags": ["design-system", "ui"],
+      "tagsZh": ["设计系统", "界面"],
+      "icon": "Boxes",
+      "cover": "",
+      "featured": true,
+      "visible": true,
+      "createdAt": "2026-02-02T00:00:00.000Z",
+      "position": [2.4, 0.45, 2.5]
+    },
+    {
+      "id": "ex-meridian",
+      "name": "Example · Meridian",
+      "nameZh": "示例 · 子午线",
+      "url": "https://example.com/nexus-demo/meridian",
+      "description": "Example only. A fictional project index. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的项目索引，并非真实网站。",
+      "categoryId": "projects",
+      "tags": ["portfolio", "case-study"],
+      "tagsZh": ["作品集", "案例"],
+      "icon": "Compass",
+      "cover": "",
+      "featured": true,
+      "visible": true,
+      "createdAt": "2026-02-11T00:00:00.000Z",
+      "position": [-3.1, -0.15, 1.5]
+    },
+    {
+      "id": "ex-harbor",
+      "name": "Example · Harbor Notes",
+      "nameZh": "示例 · 港湾笔记",
+      "url": "https://example.com/nexus-demo/harbor-notes",
+      "description": "Example only. A fictional notebook. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的笔记本，并非真实网站。",
+      "categoryId": "knowledge",
+      "tags": ["writing", "notes"],
+      "tagsZh": ["写作", "笔记"],
+      "icon": "NotebookPen",
+      "cover": "",
+      "featured": true,
+      "visible": true,
+      "createdAt": "2026-02-20T00:00:00.000Z",
+      "position": [3.2, 0.2, -0.8]
+    },
+    {
+      "id": "ex-orbit",
+      "name": "Example · Orbit Field Notes",
+      "nameZh": "示例 · 轨道田野笔记",
+      "url": "https://example.com/nexus-demo/orbit-notes",
+      "description": "Example only. A fictional research log. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的研究日志，并非真实网站。",
+      "categoryId": "knowledge",
+      "tags": ["research"],
+      "tagsZh": ["研究"],
+      "icon": "Telescope",
+      "cover": "",
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-03-01T00:00:00.000Z",
+      "position": [-2.5, 0.5, 2.3]
+    },
+    {
+      "id": "ex-north",
+      "name": "Example · North Profile",
+      "nameZh": "示例 · 北境主页",
+      "url": "https://example.com/nexus-demo/north-profile",
+      "description": "Example only. A fictional public profile. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的公开主页，并非真实网站。",
+      "categoryId": "social",
+      "tags": ["profile"],
+      "tagsZh": ["主页"],
+      "icon": "UserRound",
+      "cover": "",
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-03-04T00:00:00.000Z",
+      "position": [2.7, 0.25, 0.9]
+    },
+    {
+      "id": "ex-relay",
+      "name": "Example · Relay",
+      "nameZh": "示例 · 中继联系页",
+      "url": "https://example.com/nexus-demo/relay",
+      "description": "Example only. A fictional contact page. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的联系页面，并非真实网站。",
+      "categoryId": "social",
+      "tags": ["contact"],
+      "tagsZh": ["联系"],
+      "icon": "Mail",
+      "cover": "",
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-03-06T00:00:00.000Z",
+      "position": [-1.9, -0.25, 2.7]
+    },
+    {
+      "id": "ex-pulse",
+      "name": "Example · Pulse Bench",
+      "nameZh": "示例 · 脉冲工具台",
+      "url": "https://example.com/nexus-demo/pulse-bench",
+      "description": "Example only. A fictional utilities bench. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的实用工具台，并非真实网站。",
+      "categoryId": "tools",
+      "tags": ["utilities"],
+      "tagsZh": ["工具"],
+      "icon": "Gauge",
+      "cover": "",
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-03-12T00:00:00.000Z",
+      "position": [2.5, 0.2, -1.6]
+    },
+    {
+      "id": "ex-cipher",
+      "name": "Example · Cipher Pad",
+      "nameZh": "示例 · 密文便签",
+      "url": "https://example.com/nexus-demo/cipher-pad",
+      "description": "Example only. A fictional scratch pad. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的草稿便签，并非真实网站。",
+      "categoryId": "tools",
+      "tags": ["notes", "utilities"],
+      "tagsZh": ["笔记", "工具"],
+      "icon": "StickyNote",
+      "cover": "",
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-03-18T00:00:00.000Z",
+      "position": [-2.4, 0.35, 2.1]
+    },
+    {
+      "id": "ex-shelf",
+      "name": "Example · Archive Shelf",
+      "nameZh": "示例 · 归档架",
+      "url": "https://example.com/nexus-demo/archive-shelf",
+      "description": "Example only. A fictional archive. This is not a real website.",
+      "descriptionZh": "仅为示例。一个虚构的归档页，并非真实网站。",
+      "categoryId": "other",
+      "tags": ["archive"],
+      "tagsZh": ["归档"],
+      "icon": "Archive",
+      "cover": "",
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-03-22T00:00:00.000Z",
+      "position": [2.3, 0.15, 1.7]
+    }
+  ],
+  "connections": [
+    {
+      "id": "ln-lumen-atlas",
+      "sourceId": "ex-lumen",
+      "targetId": "ex-atlas",
+      "type": "built-with",
+      "strength": 0.85
+    },
+    {
+      "id": "ln-meridian-lumen",
+      "sourceId": "ex-meridian",
+      "targetId": "ex-lumen",
+      "type": "related-to",
+      "strength": 0.7
+    },
+    {
+      "id": "ln-signal-atlas",
+      "sourceId": "ex-signal",
+      "targetId": "ex-atlas",
+      "type": "related-to",
+      "strength": 0.62
+    },
+    {
+      "id": "ln-harbor-orbit",
+      "sourceId": "ex-harbor",
+      "targetId": "ex-orbit",
+      "type": "related-to",
+      "strength": 0.74
+    },
+    {
+      "id": "ln-meridian-harbor",
+      "sourceId": "ex-meridian",
+      "targetId": "ex-harbor",
+      "type": "related-to",
+      "strength": 0.55
+    },
+    {
+      "id": "ln-pulse-cipher",
+      "sourceId": "ex-pulse",
+      "targetId": "ex-cipher",
+      "type": "built-with",
+      "strength": 0.8
+    },
+    {
+      "id": "ln-north-relay",
+      "sourceId": "ex-north",
+      "targetId": "ex-relay",
+      "type": "related-to",
+      "strength": 0.66
+    },
+    {
+      "id": "ln-shelf-harbor",
+      "sourceId": "ex-shelf",
+      "targetId": "ex-harbor",
+      "type": "belongs-to",
+      "strength": 0.58
+    },
+    {
+      "id": "ln-cipher-pulse",
+      "sourceId": "ex-cipher",
+      "targetId": "ex-pulse",
+      "type": "belongs-to",
+      "strength": 0.5
+    }
+  ]
+}

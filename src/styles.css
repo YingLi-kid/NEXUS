@@ -1,0 +1,102 @@
+@import "@fontsource/syne/latin-600.css";
+@import "@fontsource/syne/latin-700.css";
+@import "@fontsource/manrope/latin-400.css";
+@import "@fontsource/manrope/latin-500.css";
+@import "@fontsource/manrope/latin-600.css";
+@import "@fontsource/manrope/latin-700.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: #050812;
+  --color-elev: #0c1424;
+  --color-elev-2: #142033;
+  --color-fg: #e7eef8;
+  --color-muted: #93a0b8;
+  --color-cyan: #00d9ff;
+  --color-violet: #8b5cf6;
+  --color-mint: #00ffa3;
+  --color-line: #1c2a40;
+  --shadow-panel: 0 0 0 1px color-mix(in oklab, #00d9ff 22%, transparent), 0 18px 48px rgb(0 0 0 / 0.35);
+  --spacing-rail: 18rem;
+  --spacing-detail: 22rem;
+  --spacing-sheet: 42dvh;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--color-cyan) 35%, transparent);
+    color: var(--color-fg);
+  }
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .glass {
+    background: color-mix(in oklab, var(--color-elev) 80%, transparent);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow-panel);
+  }
+  .field {
+    width: 100%;
+    min-height: 2.75rem;
+    border-radius: 0.85rem;
+    background: color-mix(in oklab, var(--color-bg) 70%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-fg) 14%, transparent);
+    padding: 0.55rem 0.85rem;
+    color: var(--color-fg);
+    outline: none;
+  }
+  textarea.field {
+    min-height: 7rem;
+    resize: vertical;
+  }
+  .field:focus-visible {
+    box-shadow: inset 0 0 0 1px var(--color-cyan);
+  }
+  .page-sky {
+    background:
+      radial-gradient(920px 480px at 100% -10%, color-mix(in oklab, var(--color-violet) 26%, transparent), transparent 62%),
+      radial-gradient(720px 420px at -10% 110%, color-mix(in oklab, var(--color-cyan) 16%, transparent), transparent 58%),
+      var(--color-bg);
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
+  }
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklab, var(--color-cyan) 40%, transparent) transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

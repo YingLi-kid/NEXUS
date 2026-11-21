@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+.node_modules.lock
+
+# build output
+dist/
+.vercel/
+.tanstack/temp/
+*.tsbuildinfo
+
+# local logs & env
+*.log
+.env
+.env.*
+
+# editor / OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# playwright artifacts
+test-results/
+playwright-report/
