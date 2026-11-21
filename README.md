@@ -2,7 +2,7 @@
 
 **中文** | [English](README.en.md)
 
-**演示站点：** https://nexus.fluentic.cn（Vercel 部署并绑定域名后生效） · **仓库：** https://github.com/YingLi-kid/NEXUS
+**演示站点（尚未上线）：** `https://nexus.fluentic.cn`（Vercel 部署并绑定域名后生效） · **仓库：** https://github.com/YingLi-kid/NEXUS
 
 > **由 GROK加DEEPSEEK完全构建**
 >
@@ -116,7 +116,7 @@ NEXUS 是一个**个人数字宇宙**站点：
 | 校验 | Zod 4 |
 | 图标 | lucide-react |
 | 可选后端 | Better Auth + Kysely + Neon / PGLite |
-| 测试 | Node Test Runner + Playwright（浏览器巡检） |
+| 测试 | Node Test Runner（`npm test`）；Playwright 仅用于可选的浏览器巡检脚本 |
 
 ---
 
@@ -181,7 +181,7 @@ npm run preview
 | `npm run dev` | 开发服务器，`0.0.0.0:8080`，热更新 |
 | `npm run build` | 生产构建，输出到 `.vercel/output`，随后执行 `db:migrate` |
 | `npm run preview` | 本地预览生产构建，`127.0.0.1:8081` |
-| `npm run preview:restart` / `npm run preview:stop` | 重启 / 停止后台预览进程 |
+| `npm run preview:restart` / `npm run preview:stop` | 重启 / 停止后台预览进程（依赖 Linux `/proc`；Windows / macOS 请直接 `Ctrl+C` 停 `npm run preview`） |
 | `npm run typecheck` | `tsc --noEmit` 全量类型检查 |
 | `npm run lint` | ESLint 检查 |
 | `npm run format` | Prettier 格式化 |
@@ -275,7 +275,8 @@ NEXUS/
 | --- | --- |
 | 拖拽 | 环绕视角 |
 | 滚轮 / 双指 | 缩放 |
-| 双击节点 | 打开站点详情或定位 |
+| 单击节点 | 选中并显示详情，同时聚焦 |
+| 双击节点 | 直接打开站点链接 |
 | 单击空白 | 取消选中 |
 | 左下角「重置视角」/ `0` | 回到默认机位 |
 | 右下角画质 | 自动（按设备性能）/ 高 / 低 |
@@ -555,7 +556,7 @@ git push
 1. Vercel → Add New → Project → 选这个仓库
 2. **Framework Preset**：`Other`
 3. **Build Command**：`npm run build`
-4. **Output Directory**：留空（Nitro 自动写 `.vercel/output`；若界面强制要求，填 `.vercel/output`）
+4. **Output Directory**：留空，不要填（Nitro 的 Vercel preset 会自动生成 `.vercel/output`，Vercel 会自动识别）
 5. **Node.js Version**：`22.x`
 6. 环境变量：默认一个都不用填
 7. Deploy
@@ -570,7 +571,7 @@ vercel link
 vercel --prod
 ```
 
-如果 CLI 询问构建配置，按上面的 Build Command / Output Directory / Node 22 填写。
+如果 CLI 询问构建配置：Build Command 填 `npm run build`，Output Directory 留空，Node.js 选 `22.x`。
 
 ### 12.4 部署产物
 
@@ -602,11 +603,11 @@ vercel --prod
 ### 12.6 绑定演示域名 `nexus.fluentic.cn`
 
 1. Vercel 项目 → Settings → Domains → 添加 `nexus.fluentic.cn`
-2. 到 DNSPod 添加解析：主机记录 `nexus`，记录类型 `CNAME`，记录值 `cname.vercel-dns.com`（若 Vercel 面板给出别的目标，以面板为准）
+2. 到 DNSPod 添加解析：主机记录 `nexus`，记录类型 `CNAME`，记录值照抄 Vercel 域名卡片里的目标（新项目通常形如 `xxxx.vercel-dns-017.com`，旧项目可能是 `cname.vercel-dns.com`；末尾的点也照抄）
 3. 等 DNS 生效，Vercel 会自动签发 HTTPS 证书
 4. 访问 **https://nexus.fluentic.cn**
 
-> `fluentic.cn` 当前已正常解析；`nexus` 这个二级域名还没添加。部署完成后在 Vercel 和 DNSPod 各加一次即可。GitHub 仓库的 Website 字段也指向这个地址。
+> `fluentic.cn` 当前已正常解析；`nexus.fluentic.cn` 这个子域名（三级域名）还没添加。部署完成后在 Vercel 和 DNSPod 各加一次即可。GitHub 仓库的 Website 字段目前也指向这个计划地址，部署前点开会打不开。
 
 ---
 

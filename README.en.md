@@ -6,7 +6,7 @@
 
 [中文](README.md) | **English**
 
-**Demo:** https://nexus.fluentic.cn (live after the Vercel deploy and domain binding) · **Repo:** https://github.com/YingLi-kid/NEXUS
+**Demo (not live yet):** `https://nexus.fluentic.cn` (live after the Vercel deploy and domain binding) · **Repo:** https://github.com/YingLi-kid/NEXUS
 
 A 3D star map for your sites, projects, notes, and identity — drag to orbit, scroll to zoom, double-click to open. Ships with English/Chinese bilingual UI, a visual control center, local persistence, and a ready-to-deploy Vercel setup. No backend required.
 
@@ -116,7 +116,7 @@ The default language is English; the top-right toggle switches to Chinese instan
 | Validation | Zod 4 |
 | Icons | lucide-react |
 | Optional backend | Better Auth + Kysely + Neon / PGLite |
-| Testing | Node Test Runner + Playwright (browser checks) |
+| Testing | Node Test Runner (`npm test`); Playwright is only for the optional browser inspection script |
 
 ---
 
@@ -181,7 +181,7 @@ No login, no database, and no API key are required by default.
 | `npm run dev` | Dev server on `0.0.0.0:8080` with hot reload |
 | `npm run build` | Production build into `.vercel/output`, then runs `db:migrate` |
 | `npm run preview` | Preview the production build on `127.0.0.1:8081` |
-| `npm run preview:restart` / `npm run preview:stop` | Restart / stop the background preview process |
+| `npm run preview:restart` / `npm run preview:stop` | Restart / stop the background preview (Linux `/proc` only; on Windows / macOS just `Ctrl+C` the `npm run preview` process) |
 | `npm run typecheck` | Full type check via `tsc --noEmit` |
 | `npm run lint` | ESLint |
 | `npm run format` | Prettier |
@@ -275,7 +275,8 @@ Use the top bar — **Universe / Explorer / Control / About** — to switch anyt
 | --- | --- |
 | Drag | Orbit the camera |
 | Scroll / two-finger | Zoom |
-| Double-click a node | Open site details or focus it |
+| Click a node | Select it, show details, and focus |
+| Double-click a node | Open the site's URL |
 | Click empty space | Clear selection |
 | Bottom-left "Reset view" / `0` | Return to the default camera |
 | Bottom-right quality | Auto (device-based) / High / Low |
@@ -555,7 +556,7 @@ git push
 1. Vercel → Add New → Project → pick this repository
 2. **Framework Preset**: `Other`
 3. **Build Command**: `npm run build`
-4. **Output Directory**: leave blank (Nitro writes `.vercel/output`; if the UI insists, enter `.vercel/output`)
+4. **Output Directory**: leave blank, do not fill it (Nitro's Vercel preset writes `.vercel/output`, and Vercel detects it automatically)
 5. **Node.js Version**: `22.x`
 6. Environment variables: none required by default
 7. Deploy
@@ -570,7 +571,7 @@ vercel link
 vercel --prod
 ```
 
-If the CLI asks for build settings, use the Build Command / Output Directory / Node 22 values above.
+If the CLI asks for build settings: Build Command `npm run build`, Output Directory blank, Node.js `22.x`.
 
 ### 12.4 Build output
 
@@ -602,11 +603,11 @@ For a personal showcase site: **none of these are needed**.
 ### 12.6 Bind the demo domain `nexus.fluentic.cn`
 
 1. Vercel project → Settings → Domains → add `nexus.fluentic.cn`
-2. At DNSPod, create a CNAME record: host `nexus`, type `CNAME`, value `cname.vercel-dns.com` (use the target Vercel shows if it differs)
+2. At DNSPod, create a CNAME record: host `nexus`, type `CNAME`, value copied exactly from Vercel's domain card (new projects usually get `xxxx.vercel-dns-017.com`; older ones may show `cname.vercel-dns.com` — keep the trailing dot)
 3. Wait for DNS to propagate; Vercel issues the HTTPS certificate automatically
 4. Visit **https://nexus.fluentic.cn**
 
-> `fluentic.cn` already resolves; the `nexus` host record does not exist yet. Add it in both Vercel and DNSPod after deploying. The GitHub repository Website field points here as well.
+> `fluentic.cn` already resolves; the `nexus` subdomain (`nexus.fluentic.cn`, a third-level name) does not exist yet. Add it in both Vercel and DNSPod after deploying. The GitHub repository Website field currently points to this planned address, so it will not open until the deploy is done.
 
 ---
 
