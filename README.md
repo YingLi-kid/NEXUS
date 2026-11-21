@@ -141,7 +141,8 @@ npm -v
 ## 5. 快速开始
 
 ```powershell
-cd X:\GitHub\app-builder-workspace
+git clone https://github.com/YingLi-kid/NEXUS.git
+cd NEXUS
 npm install
 npm run dev
 ```
@@ -201,7 +202,7 @@ npm run preview
 ## 7. 目录结构
 
 ```text
-X:\GitHub\app-builder-workspace
+NEXUS/
 ├─ public/
 │  ├─ data/nexus.json          ← 演示种子：身份 / 星系 / 站点 / 连接（可直接编辑）
 │  ├─ __grok/                  ← 平台 PWA 安装页静态资源
@@ -536,16 +537,15 @@ built-with   使用
 
 ## 12. 部署到 Vercel
 
-### 12.1 先推到 GitHub（可选）
+### 12.1 从 GitHub 克隆与推送
 
 ```powershell
-cd X:\GitHub\app-builder-workspace
-git init
+git clone https://github.com/YingLi-kid/NEXUS.git
+cd NEXUS
+# 编辑文件后
 git add .
-git commit -m "NEXUS: bilingual 3D universe"
-git branch -M main
-git remote add origin https://github.com/<你的用户名>/<仓库名>.git
-git push -u origin main
+git commit -m "Update NEXUS"
+git push
 ```
 
 `.gitignore` 已排除 `node_modules/`、`.vercel/`、`*.log`、`.env*`，不会把依赖和密钥推上去。
@@ -565,7 +565,7 @@ git push -u origin main
 ```powershell
 npm i -g vercel
 vercel login
-cd X:\GitHub\app-builder-workspace
+cd NEXUS
 vercel link
 vercel --prod
 ```

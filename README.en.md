@@ -141,7 +141,8 @@ npm -v
 ## 5. Quick Start
 
 ```powershell
-cd X:\GitHub\app-builder-workspace
+git clone https://github.com/YingLi-kid/NEXUS.git
+cd NEXUS
 npm install
 npm run dev
 ```
@@ -201,7 +202,7 @@ That is **expected**: the project is on the no-database PGLite fallback path.
 ## 7. Project Layout
 
 ```text
-X:\GitHub\app-builder-workspace
+NEXUS/
 ├─ public/
 │  ├─ data/nexus.json          ← demo seed: profile / galaxies / sites / links (editable)
 │  ├─ __grok/                  ← static assets for the platform PWA install page
@@ -536,16 +537,15 @@ To make Chinese the default language, change `lang: "en"` to `lang: "zh"` in the
 
 ## 12. Deploying to Vercel
 
-### 12.1 Push to GitHub (optional)
+### 12.1 Clone and push from GitHub
 
 ```powershell
-cd X:\GitHub\app-builder-workspace
-git init
+git clone https://github.com/YingLi-kid/NEXUS.git
+cd NEXUS
+# after editing files
 git add .
-git commit -m "NEXUS: bilingual 3D universe"
-git branch -M main
-git remote add origin https://github.com/<your-user>/<repo>.git
-git push -u origin main
+git commit -m "Update NEXUS"
+git push
 ```
 
 `.gitignore` already excludes `node_modules/`, `.vercel/`, `*.log`, and `.env*`, so dependencies and secrets stay out of the repo.
@@ -565,7 +565,7 @@ git push -u origin main
 ```powershell
 npm i -g vercel
 vercel login
-cd X:\GitHub\app-builder-workspace
+cd NEXUS
 vercel link
 vercel --prod
 ```
