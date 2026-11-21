@@ -6,7 +6,7 @@
 
 [中文](README.md) | **English**
 
-**Demo (not live yet):** `https://nexus.fluentic.cn` (live after the Vercel deploy and domain binding) · **Repo:** https://github.com/YingLi-kid/NEXUS
+**Repo:** https://github.com/YingLi-kid/NEXUS
 
 A 3D star map for your sites, projects, notes, and identity — drag to orbit, scroll to zoom, double-click to open. Ships with English/Chinese bilingual UI, a visual control center, local persistence, and a ready-to-deploy Vercel setup. No backend required.
 
@@ -599,15 +599,6 @@ The directory uploaded to Vercel is **`.vercel/output`**.
 | `GROK_AUTH_ISSUER` / `GROK_AUTH_CLIENT_ID` / `GROK_AUTH_CLIENT_SECRET` | preview defaults | Platform auth broker (needed when sign-in is enabled) |
 
 For a personal showcase site: **none of these are needed**.
-
-### 12.6 Bind the demo domain `nexus.fluentic.cn`
-
-1. Vercel project → Settings → Domains → add `nexus.fluentic.cn`
-2. At DNSPod, create a CNAME record: host `nexus`, type `CNAME`, value copied exactly from Vercel's domain card (new projects usually get `xxxx.vercel-dns-017.com`; older ones may show `cname.vercel-dns.com` — keep the trailing dot)
-3. Wait for DNS to propagate; Vercel issues the HTTPS certificate automatically
-4. Visit **https://nexus.fluentic.cn**
-
-> `fluentic.cn` already resolves; the `nexus` subdomain (`nexus.fluentic.cn`, a third-level name) does not exist yet. Add it in both Vercel and DNSPod after deploying. The GitHub repository Website field currently points to this planned address, so it will not open until the deploy is done.
 
 ---
 

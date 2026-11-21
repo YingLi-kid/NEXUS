@@ -2,7 +2,7 @@
 
 **中文** | [English](README.en.md)
 
-**演示站点（尚未上线）：** `https://nexus.fluentic.cn`（Vercel 部署并绑定域名后生效） · **仓库：** https://github.com/YingLi-kid/NEXUS
+**仓库：** https://github.com/YingLi-kid/NEXUS
 
 > **由 GROK加DEEPSEEK完全构建**
 >
@@ -599,15 +599,6 @@ vercel --prod
 | `GROK_AUTH_ISSUER` / `GROK_AUTH_CLIENT_ID` / `GROK_AUTH_CLIENT_SECRET` | 预览内置 | 平台统一认证代理（启用登录时需要） |
 
 只做个人展示站：**这些都不用配**。
-
-### 12.6 绑定演示域名 `nexus.fluentic.cn`
-
-1. Vercel 项目 → Settings → Domains → 添加 `nexus.fluentic.cn`
-2. 到 DNSPod 添加解析：主机记录 `nexus`，记录类型 `CNAME`，记录值照抄 Vercel 域名卡片里的目标（新项目通常形如 `xxxx.vercel-dns-017.com`，旧项目可能是 `cname.vercel-dns.com`；末尾的点也照抄）
-3. 等 DNS 生效，Vercel 会自动签发 HTTPS 证书
-4. 访问 **https://nexus.fluentic.cn**
-
-> `fluentic.cn` 当前已正常解析；`nexus.fluentic.cn` 这个子域名（三级域名）还没添加。部署完成后在 Vercel 和 DNSPod 各加一次即可。GitHub 仓库的 Website 字段目前也指向这个计划地址，部署前点开会打不开。
 
 ---
 
