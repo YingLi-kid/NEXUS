@@ -245,7 +245,8 @@ NEXUS/
 ├─ vercel.json                 ← Vercel install command
 ├─ package.json                ← scripts and dependencies
 ├─ README.md                   ← Chinese README
-└─ README.en.md                ← this file
+├─ README.en.md                ← this file
+└─ LICENSE                     ← 0BSD license (fully open, no attribution required)
 ```
 
 ---
@@ -711,7 +712,7 @@ No. They stay in the current browser. To publish them globally, edit the seed fi
 - Based on the Grok App Builder TanStack Start template
 - Open-source dependencies: React, TanStack, Vite, Tailwind CSS, three.js, Zustand, Zod, lucide-react, and more (see `package.json`)
 
-The repository does not currently include a `LICENSE` file. Before publishing, add MIT or Apache-2.0 and keep this build credit.
+Released under the **0BSD (BSD Zero Clause License)**: anyone may use, modify, distribute, commercialize, and redistribute it, with no attribution requirement and no other conditions. The build credit remains in this README as provenance, not a license condition. See [`LICENSE`](LICENSE).
 
 ---
 

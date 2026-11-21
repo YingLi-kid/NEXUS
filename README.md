@@ -245,7 +245,8 @@ NEXUS/
 ├─ vercel.json                 ← Vercel 安装命令
 ├─ package.json                ← 脚本与依赖
 ├─ README.md                   ← 本文件（中文）
-└─ README.en.md                ← English README
+├─ README.en.md                ← English README
+└─ LICENSE                     ← 0BSD 许可证（完全开放，无署名要求）
 ```
 
 ---
@@ -709,7 +710,7 @@ npm.cmd run dev
 - 基于 Grok App Builder 的 TanStack Start 模板搭建
 - 开源依赖：React、TanStack、Vite、Tailwind CSS、three.js、Zustand、Zod、lucide-react 等（详见 `package.json`）
 
-仓库当前未附带 `LICENSE` 文件；公开发布前建议补充 MIT 或 Apache-2.0 许可证，并保留本构建声明。
+本项目采用 **0BSD（BSD Zero Clause License）**：任何人可以自由使用、修改、分发、商用和再发布，不需要署名，也没有附加条件。构建声明保留在 README 中作为来源说明，不构成许可证限制。详见 [`LICENSE`](LICENSE)。
 
 ---
 
