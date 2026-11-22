@@ -72,8 +72,8 @@ export const DICT: Record<string, Entry> = {
   // ── explorer ─────────────────────────────────────────────────────────────
   "explorer.title": { en: "Explorer", zh: "探索" },
   "explorer.subtitle": {
-    en: "Every site in the universe, without the 3D scene. Bundled entries are examples.",
-    zh: "宇宙里的所有站点，不需要 3D 场景。内置条目均为示例。",
+    en: "Every site in the universe, without the 3D scene.",
+    zh: "宇宙里的所有站点，不需要 3D 场景。",
   },
   "explorer.tab.all": { en: "All", zh: "全部" },
   "explorer.tab.favorites": { en: "Favorites", zh: "收藏" },
@@ -182,17 +182,17 @@ export const DICT: Record<string, Entry> = {
 
   // ── data tools ───────────────────────────────────────────────────────────
   "data.intro": {
-    en: "Edits stay in this browser. The bundled file is only the demo seed. Import replaces the current universe.",
-    zh: "所有修改只保存在此浏览器中。内置文件只是演示种子数据。导入会替换当前宇宙。",
+    en: "Edits stay in this browser. The bundled file is the starting data. Import replaces the current universe.",
+    zh: "所有修改只保存在此浏览器中。内置文件是初始数据。导入会替换当前宇宙。",
   },
   "data.export": { en: "Export JSON", zh: "导出 JSON" },
   "data.import": { en: "Import JSON", zh: "导入 JSON" },
   "data.imported": { en: "Imported.", zh: "已导入。" },
   "data.notJson": { en: "That file is not JSON.", zh: "这个文件不是 JSON。" },
-  "data.demoRestored": { en: "Demo restored.", zh: "演示数据已恢复。" },
-  "data.restoreFailed": { en: "Could not restore the demo.", zh: "无法恢复演示数据。" },
-  "data.replaceDemo": { en: "Replace with demo", zh: "用演示数据替换" },
-  "data.restoreDemo": { en: "Restore demo data", zh: "恢复演示数据" },
+  "data.demoRestored": { en: "Seed restored.", zh: "内置数据已恢复。" },
+  "data.restoreFailed": { en: "Could not restore the seed.", zh: "无法恢复内置数据。" },
+  "data.replaceDemo": { en: "Replace with seed", zh: "用内置数据替换" },
+  "data.restoreDemo": { en: "Restore seed data", zh: "恢复内置数据" },
 
   // ── site detail ──────────────────────────────────────────────────────────
   "site.open": { en: "Open website", zh: "打开网站" },
@@ -203,6 +203,7 @@ export const DICT: Record<string, Entry> = {
   "site.example": { en: "Example link", zh: "示例链接" },
   "site.core": { en: "Core", zh: "核心" },
   "site.aboutIdentity": { en: "About this identity", zh: "关于这个身份" },
+  "site.openMain": { en: "Main site", zh: "进入主站" },
   "site.unassigned": { en: "Unassigned", zh: "未分类" },
   "site.hidden": { en: "Hidden in the universe until shown.", zh: "在宇宙中已隐藏，直到手动显示。" },
   "site.connections": { en: "Connections", zh: "连接" },

@@ -48,7 +48,7 @@ NEXUS is a **personal digital universe**:
 - **Control Center** — add, edit, and delete sites, galaxies, links, and identity right in the browser. Changes apply instantly.
 - **About** — bio, featured work, galaxy overview, and contact links.
 
-The default content is fictional `Demo Operator` data pointing at `example.com`; it contains no real personal information. Replace it in the Control Center or edit the seed file directly.
+The bundled seed is editable personal data; this version contains real sites. Replace it in the Control Center or edit the seed file directly.
 
 The default language is English; the top-right toggle switches to Chinese instantly and remembers the choice per browser.
 
@@ -83,7 +83,7 @@ The default language is English; the top-right toggle switches to Chinese instan
 - Galaxies: name, description, color, position, English + Chinese copy
 - Links: source, target, relation type (belongs-to / related-to / built-with), strength
 - Identity: name, role, bio, focus areas, email, location, social pages
-- Data: export / import JSON, restore demo data
+- Data: export / import JSON, restore bundled data
 - Every edit auto-saves with validation and inline errors
 
 **Panels and interaction**
@@ -151,7 +151,7 @@ Open:
 
 **http://localhost:8080**
 
-On first launch the demo seed loads. Once the 3D universe appears:
+On first launch the bundled seed loads. Once the 3D universe appears:
 
 1. Click `中文` in the top-right to switch the UI to Chinese
 2. The left panel lists galaxies; the right panel shows details
@@ -204,7 +204,7 @@ That is **expected**: the project is on the no-database PGLite fallback path.
 ```text
 NEXUS/
 ├─ public/
-│  ├─ data/nexus.json          ← demo seed: profile / galaxies / sites / links (editable)
+│  ├─ data/nexus.json          ← bundled seed: profile / galaxies / sites / links (editable)
 │  ├─ __grok/                  ← static assets for the platform PWA install page
 │  └─ og.jpg etc.              ← social share image and icons
 ├─ src/
@@ -330,7 +330,7 @@ Nodes: the **Core** in the center is your identity; outer **galaxies** are color
 
 - **Export JSON**: download a full backup of the current universe
 - **Import JSON**: replace current data from a file (format is validated)
-- **Restore demo data**: return to the bundled demo after confirmation
+- **Restore bundled data**: return to the bundled seed after confirmation
 
 ### 8.7 Shortcuts
 
@@ -363,11 +363,11 @@ Boot sequence:
 5. Different fingerprint (new deploy or edited seed) → the file replaces local data
 6. Seed fetch fails with a local cache → keep using the cache; without one → show an error and **Try again**
 
-This means **a new deploy overwrites visitors' old demo data**. Export JSON first if you want to keep edits.
+This means **a new deploy overwrites visitors' old bundled data**. Export JSON first if you want to keep edits.
 
 ### 9.3 Reset local data
 
-In the app: Control Center → Data → Restore demo data.
+In the app: Control Center → Data → Restore bundled data.
 
 In the browser console:
 
@@ -636,7 +636,7 @@ Run `npm run build` first, then `npm run preview`. The preview port is `8081`, n
 
 **Q5. Edited `nexus.json` but a refresh shows no change?**
 
-The browser still holds the old cache. Press `Ctrl + Shift + R`; or use Control Center → Restore demo data; or run:
+The browser still holds the old cache. Press `Ctrl + Shift + R`; or use Control Center → Restore bundled data; or run:
 
 ```js
 localStorage.removeItem("nexus-universe-v1");
@@ -673,7 +673,7 @@ No. They stay in the current browser. To publish them globally, edit the seed fi
 | --- | --- |
 | UI copy / errors / page titles | `src/lib/i18n.ts` |
 | Language picking and fallback rules | `src/lib/localize.ts` |
-| Default demo content (global) | `public/data/nexus.json` |
+| Default bundled data (global) | `public/data/nexus.json` |
 | Data model (new fields) | `src/types/nexus.ts` |
 | Data validation rules | `src/services/nexus-schema.ts` |
 | Local persistence / seed fingerprint / state actions | `src/stores/nexus-store.ts` |
@@ -693,7 +693,7 @@ No. They stay in the current browser. To publish them globally, edit the seed fi
 
 ## 15. Security and Privacy
 
-- Default content is **fictional demo data**, contains no real personal information, and points at `example.com`
+- The bundled seed is **editable personal data**; this version contains real sites. Replace it with your own content before redistributing or reusing it
 - Universe data stays in browser `localStorage` and is never uploaded
 - Sign-in is off by default; accounts and databases only come into play when auth is enabled
 - Never commit `.env`, database URLs, or OAuth secrets (`.gitignore` already excludes `.env*`)

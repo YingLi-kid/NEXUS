@@ -104,18 +104,16 @@ export function AboutPage() {
               <dt className="text-muted">{t("about.location")}</dt>
               <dd>{pickText(lang, profile.location.trim(), profile.locationZh) || t("about.notSet")}</dd>
             </div>
-            <div>
-              <dt className="text-muted">{t("about.email")}</dt>
-              <dd>
-                {emailOk ? (
+            {emailOk ? (
+              <div>
+                <dt className="text-muted">{t("about.email")}</dt>
+                <dd>
                   <a className="focus-ring text-cyan" href={`mailto:${profile.email.trim()}`}>
                     {profile.email.trim()}
                   </a>
-                ) : (
-                  t("about.notSet")
-                )}
-              </dd>
-            </div>
+                </dd>
+              </div>
+            ) : null}
           </dl>
           {profile.socials.length > 0 ? (
             <ul className="mt-4 flex flex-wrap gap-2">

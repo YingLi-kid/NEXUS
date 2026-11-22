@@ -71,6 +71,8 @@ export function ExampleBadge({ url }: { url: string }) {
 export function CoreCard() {
   const profile = useNexus((state) => state.profile);
   const { t, lang } = useI18n();
+  const mainSite = profile.socials.find((social) => social.id === "main" || social.url.includes("www.fluentic.cn"));
+  const mainSiteUrl = mainSite ? safeHttpUrl(mainSite.url) : null;
   return (
     <div className="grid gap-3">
       <p className="text-xs text-cyan">{t("site.core")}</p>
@@ -79,9 +81,22 @@ export function CoreCard() {
         <p className="mt-1 text-sm text-muted">{profileRole(lang, profile)}</p>
       </div>
       <p className="text-sm leading-relaxed text-fg/90">{profileBio(lang, profile)}</p>
-      <Link to="/about" className="focus-ring inline-flex h-11 items-center text-sm text-cyan">
-        {t("site.aboutIdentity")}
-      </Link>
+      <div className="flex flex-wrap items-center gap-3">
+        {mainSiteUrl ? (
+          <a
+            href={mainSiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring inline-flex h-11 items-center justify-center gap-2 rounded-full bg-cyan px-4 text-sm font-semibold text-bg"
+          >
+            {t("site.openMain")}
+            <ArrowUpRight className="size-4" aria-hidden="true" />
+          </a>
+        ) : null}
+        <Link to="/about" className="focus-ring inline-flex h-11 items-center text-sm text-cyan">
+          {t("site.aboutIdentity")}
+        </Link>
+      </div>
     </div>
   );
 }
