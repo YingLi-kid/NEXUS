@@ -555,9 +555,9 @@ git push
 ### 12.2 Vercel 控制台
 
 1. Vercel → Add New → Project → 选这个仓库
-2. **Framework Preset**：`Other`
-3. **Build Command**：`npm run build`
-4. **Output Directory**：留空，不要填（Nitro 的 Vercel preset 会自动生成 `.vercel/output`，Vercel 会自动识别）
+2. **Framework Preset**：`TanStack Start`（Vercel 会自动识别；不要手动改成 `Other`）
+3. **Build Command**：保持默认 `npm run build`
+4. **Output Directory**：保持 Vercel 自动填的值，不要手动改
 5. **Node.js Version**：`22.x`
 6. 环境变量：默认一个都不用填
 7. Deploy
@@ -572,7 +572,7 @@ vercel link
 vercel --prod
 ```
 
-如果 CLI 询问构建配置：Build Command 填 `npm run build`，Output Directory 留空，Node.js 选 `22.x`。
+如果 CLI 询问构建配置：Framework Preset 选 `TanStack Start`，Build Command 填 `npm run build`，Output Directory 保持默认，Node.js 选 `22.x`。
 
 ### 12.4 部署产物
 

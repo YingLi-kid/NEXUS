@@ -555,9 +555,9 @@ git push
 ### 12.2 Vercel dashboard
 
 1. Vercel → Add New → Project → pick this repository
-2. **Framework Preset**: `Other`
-3. **Build Command**: `npm run build`
-4. **Output Directory**: leave blank, do not fill it (Nitro's Vercel preset writes `.vercel/output`, and Vercel detects it automatically)
+2. **Framework Preset**: `TanStack Start` (Vercel detects it; do not switch it to `Other`)
+3. **Build Command**: keep the default `npm run build`
+4. **Output Directory**: keep whatever Vercel auto-fills; do not change it manually
 5. **Node.js Version**: `22.x`
 6. Environment variables: none required by default
 7. Deploy
@@ -572,7 +572,7 @@ vercel link
 vercel --prod
 ```
 
-If the CLI asks for build settings: Build Command `npm run build`, Output Directory blank, Node.js `22.x`.
+If the CLI asks for build settings: Framework Preset `TanStack Start`, Build Command `npm run build`, Output Directory default, Node.js `22.x`.
 
 ### 12.4 Build output
 
