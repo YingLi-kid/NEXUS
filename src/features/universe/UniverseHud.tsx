@@ -263,7 +263,7 @@ export function UniverseHud() {
       ) : (
         <aside
           className={cn(
-            "pointer-events-auto absolute top-24 right-4 bottom-20 hidden lg:block",
+            "detail-reveal pointer-events-auto absolute top-24 right-4 bottom-20 hidden lg:block",
             detailMode === "compact" ? "w-60" : "w-detail",
           )}
         >

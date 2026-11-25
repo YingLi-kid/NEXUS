@@ -118,6 +118,23 @@
       "position": [2.4, 0.45, 2.5]
     },
     {
+      "id": "softnest",
+      "name": "SOFTNEST",
+      "nameZh": "SOFTNEST 软件目录",
+      "url": "https://softnest.fluentic.cn",
+      "description": "A dark, bilingual software directory with 100 GitHub projects, star counts and direct download links.",
+      "descriptionZh": "暗色双语软件目录，收录 100 个 GitHub 项目，带星数与直达下载入口。",
+      "categoryId": "projects",
+      "tags": ["software", "directory", "github"],
+      "tagsZh": ["软件", "目录", "GitHub"],
+      "icon": "Boxes",
+      "cover": "",
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "position": [-2.5, 0.35, -1.8]
+    },
+    {
       "id": "firework",
       "name": "Firework Simulator",
       "nameZh": "烟花模拟",
@@ -336,6 +353,13 @@
       "targetId": "github",
       "type": "related-to",
       "strength": 0.7
+    },
+    {
+      "id": "ln-softnest-nexus",
+      "sourceId": "softnest",
+      "targetId": "nexus",
+      "type": "related-to",
+      "strength": 0.6
     },
     {
       "id": "ln-ai-fl",

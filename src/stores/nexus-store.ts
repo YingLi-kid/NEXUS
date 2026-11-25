@@ -134,6 +134,14 @@ function nextFocus(previous: CameraFocus | null, view: { cam: CameraFocus["cam"]
   return { ...view, nonce: (previous?.nonce ?? 0) + 1 };
 }
 
+/**
+ * Selecting a planet should bring the docked detail card back when the visitor
+ * previously hid it. Compact stays compact; expanded stays expanded.
+ */
+function detailModeAfterSelect(mode: PanelMode, id: string | null): PanelMode {
+  return id !== null && mode === "hidden" ? "expanded" : mode;
+}
+
 export const useNexus = create<NexusState>()(
   persist(
     (set, get) => ({
@@ -190,13 +198,18 @@ export const useNexus = create<NexusState>()(
         })),
       setReady: () => set({ ready: true, loadError: null }),
       setLoadError: (message) => set({ loadError: message, ready: false }),
-      select: (id) => set({ selectedId: id }),
+      select: (id) =>
+        set((state) => ({
+          selectedId: id,
+          detailMode: detailModeAfterSelect(state.detailMode, id),
+        })),
       focusOn: (id) => {
         const state = get();
         if (id === CORE_ID) {
           set({
             selectedId: CORE_ID,
             activeCategoryId: null,
+            detailMode: detailModeAfterSelect(state.detailMode, CORE_ID),
             focus: nextFocus(state.focus, viewFor([0, 0, 0])),
           });
           return;
@@ -208,6 +221,7 @@ export const useNexus = create<NexusState>()(
           hiddenCategoryIds: state.hiddenCategoryIds.filter((categoryId) => categoryId !== site.categoryId),
           selectedId: id,
           activeCategoryId: site.categoryId,
+          detailMode: detailModeAfterSelect(state.detailMode, id),
           focus: nextFocus(state.focus, viewFor(siteWorld(site, state.categories))),
         });
       },
